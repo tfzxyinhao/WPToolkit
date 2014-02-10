@@ -1,4 +1,4 @@
-﻿using Microsoft.Phone.Controls.Primitives;
+using Microsoft.Phone.Controls.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -182,6 +182,36 @@ namespace Microsoft.Phone.Controls
         /// </returns>
         public static readonly DependencyProperty UseTouchAnimationsForAllNavigationProperty = DependencyProperty.Register(
             "UseTouchAnimationsForAllNavigation",
+            typeof(bool),
+            typeof(FlipView),
+            new PropertyMetadata(true));
+
+        #endregion
+
+        #region EnableTouch
+
+        /// <summary>
+        /// Gets or sets a value that indicates whether transition animations are always used whether the navigation is touch-based and programmatic.
+        /// </summary>
+        /// 
+        /// <returns>
+        /// true if transition animations are always used; false if transition animations are used only for touch navigation. The default is true.
+        /// </returns>
+        public bool EnableTouch
+        {
+            get { return (bool)GetValue(EnableTouchProperty); }
+            set { SetValue(EnableTouchProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the EnableTouchProperty dependency property.
+        /// </summary>
+        /// 
+        /// <returns>
+        /// The identifier for the EnableTouchProperty dependency property.
+        /// </returns>
+        public static readonly DependencyProperty EnableTouchProperty = DependencyProperty.Register(
+            "EnableTouch",
             typeof(bool),
             typeof(FlipView),
             new PropertyMetadata(true));
