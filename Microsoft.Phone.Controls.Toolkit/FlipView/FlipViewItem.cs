@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -66,7 +66,7 @@ namespace Microsoft.Phone.Controls
         {
             base.OnManipulationStarted(e);
 
-            if (ParentFlipView != null)
+            if (ParentFlipView != null && ParentFlipView.EnableTouch == true)
             {
                 ParentFlipView.OnManipulationStarted(this, e);
             }
@@ -85,7 +85,7 @@ namespace Microsoft.Phone.Controls
         {
             base.OnManipulationDelta(e);
 
-            if (ParentFlipView != null)
+            if (ParentFlipView != null && ParentFlipView.EnableTouch == true)
             {
                 ParentFlipView.OnManipulationDelta(this, e);
             }
@@ -104,7 +104,7 @@ namespace Microsoft.Phone.Controls
         {
             base.OnManipulationCompleted(e);
 
-            if (ParentFlipView != null)
+            if (ParentFlipView != null && ParentFlipView.EnableTouch == true)
             {
                 ParentFlipView.OnManipulationCompleted(this, e);
             }
